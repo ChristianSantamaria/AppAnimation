@@ -36,8 +36,7 @@ class FragmentHome : Fragment() {
         return inflater!!.inflate(R.layout.fragment_home, container, false)
     }
 
-    var jobHome: Job? = null
-    var contador: Int = 10
+    var contador: Int = 100
     var monstruos: Int = Main2Activity.darCont()
 
     var random = Random()
@@ -100,11 +99,5 @@ class FragmentHome : Fragment() {
         objectAnimator.interpolator
         objectAnimator.start()
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        jobHome?.cancel()
-    }
-
 
 }
