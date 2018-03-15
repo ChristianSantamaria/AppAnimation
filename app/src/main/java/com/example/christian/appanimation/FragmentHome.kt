@@ -53,17 +53,19 @@ class FragmentHome : Fragment() {
             barravida.setProgress(contador)
             contvida.setText("${contador} / 100")
 
-            if (contador == 0) {
-                contador = 100
-                barravida.setProgress(contador)
-                monstruos = monstruos + 1
-                cambiarCont(monstruos)
-            }
+            //Movimiento
             var n = rand(0, 2)
             if (n == 0){
                 animarHorizontal()
             }else{
                 animarVertical()
+            }
+
+            if (contador == 0) {
+                contador = 100
+                barravida.setProgress(contador)
+                monstruos = monstruos + 1
+                cambiarCont(monstruos)
             }
         }
     }
