@@ -9,23 +9,32 @@ import kotlinx.android.synthetic.main.activity_main2.*
 
 class Main2Activity : AppCompatActivity() {
 
-    data class datos(val texto1: String, val texto2: String)
-    val datoss = datos("Estamos en home", "Estamos en dashboard")
+    data class monstruosCazados(var contador: Int)
+
+    companion object {
+        var datoss = monstruosCazados(0)
+
+        fun cambiarCont(i: Int){
+            datoss = monstruosCazados(i)
+        }
+
+        fun darCont(): Int {
+            return datoss.contador
+        }
+    }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                message.setText(R.string.title_home)
-                // Cargamos Fragment Home
+                message.setText(datoss.contador.toString())
 
-                val fragment = FragmentHome.Companion.newInstance(datoss.texto1)
-                addFragment(fragment)
+                addFragment(FragmentHome.Companion.newInstance(datoss.contador.toString()))
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                message.setText(R.string.title_dashboard)
+                message.setText(datoss.contador.toString())
 
-                addFragment(FragmentDashboard.Companion.newInstance(datoss.texto2))
+                addFragment(FragmentDashboard.Companion.newInstance(datoss.contador.toString()))
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -46,7 +55,7 @@ class Main2Activity : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        // Por defecto cargamos fragment Home
-        addFragment(FragmentHome.Companion.newInstance("Por defecto cargamos Home"))
+
+        addFragment(FragmentHome.Companion.newInstance(""))
     }
 }

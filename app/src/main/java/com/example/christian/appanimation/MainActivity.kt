@@ -1,5 +1,6 @@
 package com.example.christian.appanimation
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -11,7 +12,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button2.setOnClickListener(){
-            setContentView(R.layout.activity_main2)
+            val intento : Intent = Intent(this,Main2Activity::class.java)
+            startActivity(intento)
         }
     }
 }

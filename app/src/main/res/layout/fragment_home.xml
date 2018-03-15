@@ -9,24 +9,26 @@
 
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="138dp"
-        android:layout_height="36dp"
+        android:id="@+id/contvida"
+        android:layout_width="71dp"
+        android:layout_height="24dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="100/100"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.016" />
+        app:layout_constraintVertical_bias="0.08" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="288dp"
-        android:layout_height="276dp"
+        android:id="@+id/monster"
+        android:layout_width="248dp"
+        android:layout_height="250dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -39,10 +41,10 @@
         app:srcCompat="@drawable/ic_monsterhunter" />
 
     <ProgressBar
-        android:id="@+id/progressBar2"
+        android:id="@+id/barravida"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="289dp"
-        android:layout_height="30dp"
+        android:layout_width="252dp"
+        android:layout_height="34dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -50,7 +52,7 @@
         android:max="100"
         android:progress="100"
         android:progressTint="@android:color/holo_green_light"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/monster"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"

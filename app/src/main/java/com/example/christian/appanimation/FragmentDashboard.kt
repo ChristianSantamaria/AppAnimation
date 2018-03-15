@@ -5,21 +5,29 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.example.christian.appanimation.Main2Activity.Companion.darCont
+import kotlinx.android.synthetic.main.fragment_dashboard.*
+
 
 class FragmentDashboard : Fragment() {
 
     companion object {
         fun newInstance(key: String): FragmentDashboard {
-            var fragmentDashboard = FragmentDashboard()
+
+            var fragmentDas = FragmentDashboard()
             var args = Bundle()
-            fragmentDashboard.arguments = args
-            return fragmentDashboard
+            args.putString("key",key)
+
+
+            fragmentDas.arguments = args
+            return fragmentDas
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -29,7 +37,9 @@ class FragmentDashboard : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //textView.setText(arguments.getString("key"))
+        var contador : Int = 0
+        contador = darCont()
+        contadorMonstruos.setText("${contador}")
     }
 
 }
